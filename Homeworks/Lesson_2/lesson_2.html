@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header></header>
+    <main id="target" class="target" name="target"></main>
+    <article></article>
+    <footer></footer>
+
+    <script>
+
+      // getElementsBy
+      const main1 = (() => {
+        const elements = document.getElementsByTagName("main");
+        console.log("main1: " + elements[0].outerHTML)
+      })()
+
+      const main2 = (() => {
+        const elements = document.getElementsByName("target");
+        console.log("main2: " + elements[0].outerHTML)
+      })()
+
+      const main3 = (() => {
+        const elements = document.getElementsByClassName("target");
+        console.log("main3: " + elements[0].outerHTML)
+      })()
+
+      const main4 = (() => {
+        const element = document.getElementById("target");
+        console.log("main4: " + element.outerHTML)
+      })()
+
+
+      // querySelector
+      const main5 = (() => {
+        const element = document.querySelector("main");
+        console.log("main5: " + element.outerHTML)
+      })()
+
+      const main6 = (() => {
+        const element = document.querySelector("[name='target']");
+        console.log("main6: " + element.outerHTML)
+      })()
+
+      const main7 = (() => {
+        const element = document.querySelector(".target");
+        console.log("main7: " + element.outerHTML)
+      })()
+
+      const main8 = (() => {
+        const element = document.querySelector("#target");
+        console.log("main8: " + element.outerHTML)
+      })()
+
+
+      // children
+      const main9 = (() => {
+        for (let child of document.body.children) {
+          if (child.id === "target") console.log("main9: " + child.outerHTML)
+        }
+      })()
+
+      const main10 = (() => {
+        for (let child of document.body.children) {
+          if (child.classList == "target") console.log("main10: " + child.outerHTML)
+        }
+      })()
+
+      const main11 = (() => {
+        for (let child of document.body.children) {
+          if (child.className === "target") console.log("main11: " + child.outerHTML)
+        }
+      })()
+
+      const main12 = (() => {
+        for (let child of document.body.children) {
+          if (child.nodeName === "MAIN") console.log("main12: " + child.outerHTML)
+        }
+      })()
+
+      const main13 = (() => {
+        for (let child of document.body.children) {
+          if (child.tagName === "MAIN") console.log("main13: " + child.outerHTML)
+        }
+      })()
+
+      const main14 = (() => {
+        for (let child of document.body.children) {
+          if (child.outerHTML === '<main id="target" class="target" name="target"></main>') console.log("main14: " + child.outerHTML)
+        }
+      })()
+
+      const main15 = (() => {
+        console.log("main15: " + document.body.firstElementChild.nextElementSibling.outerHTML)
+      })()
+
+      const main16 = (() => {
+        console.log("main16: " + document.body.children[1].outerHTML)
+      })()
+
+
+      // то же, только с childNodes
+      const main17 = (() => {
+        for (let child of document.body.childNodes) {
+          if (child.id === "target") console.log("main17: " + child.outerHTML)
+        }
+      })()
+
+      const main18 = (() => {
+        for (let child of document.body.childNodes) {
+          if (child.classList == "target") console.log("main18: " + child.outerHTML)
+        }
+      })()
+
+      const main19 = (() => {
+        for (let child of document.body.childNodes) {
+          if (child.className === "target") console.log("main19: " + child.outerHTML)
+        }
+      })()
+
+      const main20 = (() => {
+        for (let child of document.body.childNodes) {
+          if (child.nodeName === "MAIN") console.log("main20: " + child.outerHTML)
+        }
+      })()
+
+      const main21 = (() => {
+        for (let child of document.body.childNodes) {
+          if (child.tagName === "MAIN") console.log("main21: " + child.outerHTML)
+        }
+      })()
+
+      const main22 = (() => {
+        for (let child of document.body.childNodes) {
+          if (child.outerHTML === '<main id="target" class="target" name="target"></main>') console.log("main22: " + child.outerHTML)
+        }
+      })()
+
+      const main23 = (() => {
+        console.log("main23: " + document.body.firstChild.nextSibling.nextSibling.nextSibling.outerHTML)
+      })()
+      
+      const main24 = (() => {
+        console.log("main24: " + document.body.childNodes[3].outerHTML)
+      })()
+      
+
+      /*
+       Необходимо найти и записать в переменную узел-элемент <main></main> всеми возможными способами
+
+       Например : 
+
+       const main1 = "Ваш код"
+       console.log('main1', main1);  // output: "main1" <main id="target" class="target" name="target"></main>
+
+       const main2 = ...
+       console.log('main2', main2);  // output: "main2" <main id="target" class="target" name="target"></main>
+
+       и т. д.
+
+       Важно : Если решаем идти по узлам с корня документа, то идем только по кратчайшему пути
+      */
+    </script>
+  </body>
+</html>
