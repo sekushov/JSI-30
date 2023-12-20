@@ -180,7 +180,7 @@ const deepEqual = (firstObj, secondObj) => {
     }
   }
   isEqual(firstObj, secondObj);
-  return equal ? true : false
+  return equal
 };
 
 //
